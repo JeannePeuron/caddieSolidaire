@@ -15,7 +15,7 @@ function calculateTotal(cart) {
     const reducPrice = cart[i].price * 0.9;
     const quantity = cart[i].quantity;
 
-    if (cart[i].quantity > 5) {
+    if (cart[i].quantity >= 5) {
       total += reducPrice * quantity;
       //   console.log(total);
     } else {
@@ -28,3 +28,24 @@ function calculateTotal(cart) {
   // Retourne un arrondi à deux décimales.
 }
 console.log(calculateTotal(cart));
+const nested = [
+  [1, 2, 3, 4, 5],
+  [6, 7, 8, 9, 10],
+  [45, 45, 65],
+];
+
+function flat(tab) {
+  const result = [];
+
+  tab.forEach((element) => {
+    element.forEach((value) => {
+      result.push(value);
+    });
+  });
+
+  return result;
+}
+
+console.log(flat(nested));
+
+// console.log(nested.flat());
